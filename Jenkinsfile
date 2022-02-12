@@ -30,7 +30,11 @@ pipeline {
         
         }
       }
-      
+        stage ('Logout'){
+            steps{
+                sh 'docker logout'
+            }
+        }
       
       
       
@@ -43,10 +47,6 @@ pipeline {
             }
            }
         
-        posts{
-            always{
-                sh 'docker logout'
-            }
-        }
+        
     }
 }
