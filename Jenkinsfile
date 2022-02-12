@@ -41,7 +41,12 @@ pipeline {
                  sh "docker run -d --restart=always alexroskvas/python:latest "
                 
             }
-           
-       }  
+           }
+        
+        posts{
+            always{
+                sh 'docker logout'
+            }
+        }
     }
 }
